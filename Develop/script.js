@@ -95,20 +95,29 @@ function generatePassword() {
     allCharacters.push.apply(allCharacters, specialArr);
   }
 
-  // Get references to the #generate element
-  var generateBtn = document.querySelector("#generate");
-
-  // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-
-    passwordText.value = password;
+  // randomize password // length of password selected by the user
+  for (var i = 0; i < passLength; i++) {
+    var random = Math.floor(Math.random() * allCharacters.length);
+    password = password + allCharacters[random];
   }
 
-  // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword);
+  return password;
+}
 
-  ////////////////////////////////////////////////////////////////////////////
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
 
-  
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+////////////////////////////////////////////////////////////////////////////
+
+
