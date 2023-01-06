@@ -81,6 +81,20 @@ function generatePassword() {
   var specialChArr = ["!", "@", "#", "$", "%", "&", "^", "*"];
   var allCh = [];
 
+  // combining arrays using if statements
+  if (uppercaseL === true) {
+    allCharacters.push.apply(allCharacters, uppercaseArr);
+  }
+  if (lowercaseL === true) {
+    allCharacters.push.apply(allCharacters, lowercaseArr);
+  }
+  if (numbers === true) {
+    allCharacters.push.apply(allCharacters, numbersArr);
+  }
+  if (specialCh === true) {
+    allCharacters.push.apply(allCharacters, specialArr);
+  }
+
   // Get references to the #generate element
   var generateBtn = document.querySelector("#generate");
 
