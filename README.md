@@ -6,7 +6,7 @@ I was given HTML, CSS, and JavaScript starter code for a random password generat
 
 ### Links
 
-Deployed Site URL: []
+Deployed Site URL: [https://jacquelinehockin.github.io/Password_Generator/]
 
 #### Screenshot
 
