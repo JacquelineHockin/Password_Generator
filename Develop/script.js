@@ -83,22 +83,22 @@ function generatePassword() {
 
   // combining arrays using if statements
   if (uppercaseL === true) {
-    allCharacters.push.apply(allCharacters, uppercaseArr);
+    allCh.push.apply(allCh, uppercaseArr);
   }
   if (lowercaseL === true) {
-    allCharacters.push.apply(allCharacters, lowercaseArr);
+    allCh.push.apply(allCh, lowercaseArr);
   }
   if (numbers === true) {
-    allCharacters.push.apply(allCharacters, numbersArr);
+    allCh.push.apply(allCh, numbersArr);
   }
   if (specialCh === true) {
-    allCharacters.push.apply(allCharacters, specialArr);
+    allCh.push.apply(allCh, specialChArr);
   }
 
   // randomize password // length of password selected by the user
   for (var i = 0; i < passLength; i++) {
-    var random = Math.floor(Math.random() * allCharacters.length);
-    password = password + allCharacters[random];
+    var random = Math.floor(Math.random() * allCh.length);
+    password = password + allCh[random];
   }
 
   return password;
@@ -117,7 +117,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-////////////////////////////////////////////////////////////////////////////
-
-
