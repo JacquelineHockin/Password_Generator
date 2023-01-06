@@ -1,16 +1,85 @@
 // Assignment code here
 var generateBtn = document.querySelector("#generate");
 
-// start of function for password generation //
 function generatePassword() {
-  // boolean variables for prompts //
+  // prompts -- boolean variables
   var passLength = prompt(
-    "How long will your password be? You must pick a number between 8 and 128."
+    "How long would you like your password to be? Please pick a number between 8 and 128."
   );
-  var upperCase = confirm("Will your password use uppercase?");
-  var lowerCase = confirm("Will your password use lowercase?");
-  var numbers = confirm("Will your password use numbers?");
-  var specialCh = confirm("Will your password use special characters?");
+  var uppercaseL = confirm(
+    "Would you like your password to contain uppercase letters?"
+  );
+  var lowercaseL = confirm(
+    "Would you like your password to contain lowercase letters?"
+  );
+  var numbers = confirm(
+    "Would you like your password to contain numeric numbers?"
+  );
+  var specialCh = confirm(
+    "Would you like your password to contain special characters?"
+  );
+
+  // arrays for password character possibilities
+  var password = "";
+  var uppercaseArr = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
+  var lowercaseArr = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+  var numbersArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  var specialChArr = ["!", "@", "#", "$", "%", "&", "^", "*"];
+  var allCh = [];
 
   // Get references to the #generate element
   var generateBtn = document.querySelector("#generate");
